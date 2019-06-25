@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+
 	"gopkg.in/yaml.v2"
 )
 
@@ -83,4 +84,12 @@ func parseFile(file []byte) (*Cfg, error) {
 	}
 
 	return &cfg, nil
+}
+
+func (cfg Cfg) ListCommands() []string {
+	commands := make([]string, 0, len(cfg.Commands))
+	for cmd, _ := range cfg.Commands {
+		commands = append(commands, cmd)
+	}
+	return commands
 }
