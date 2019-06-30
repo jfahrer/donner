@@ -1,6 +1,9 @@
 # Donner
+[![Go Report Card](https://goreportcard.com/badge/github.com/jfahrer/donner)](https://goreportcard.com/report/github.com/jfahrer/donner)
 
-Donner is a generic command wrapper. It let's you define strategies to wrap commands in things like `docker-compose exec` or `docker container run`. This is can come in very handy when developing applications in containers. Donner allows defining a wrapping strategy on a per command basis. So you don't have to worry which service to use or whether you should use `docker-compose exec` or `docker-compose run` when executing a command.
+:boom: Donner is a generic command wrapper. It let's you define strategies to wrap commands in things like `docker-compose exec` or `docker container run`.  
+This is can come in very handy when developing applications in containers.  
+Donner allows defining a wrapping strategy on a per command basis. So you don't have to worry which service to use or whether you should use `docker-compose exec` or `docker-compose run` when executing a command.
 
 ## Examples
 
