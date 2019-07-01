@@ -18,20 +18,18 @@ func printAliases(cfg *Cfg, strictMode, fallbackMode bool) {
 		flags = append(flags, "--fallback")
 	}
 
-	for index, command := range commands {
-		output := append(flags, command)
-		outputs[index] = strings.Join(output, " ")
+	for i, c := range commands {
+		output := append(flags, c)
+		outputs[i] = strings.Join(output, " ")
 	}
 
 	fmt.Println()
-	for index, command := range commands {
-		fmt.Printf("alias %s='donner run %s'\n", command, outputs[index])
+	for i, c := range commands {
+		fmt.Printf("alias %s='donner run %s'\n", c, outputs[i])
 	}
 
 	aliasCommand := strings.Join(append([]string{"donner", "aliases"}, flags...), " ")
 
-	fmt.Println("")
-	fmt.Printf("# copy and paste the output into your terminal or run\n")
-	fmt.Printf("#  eval $(%s)", aliasCommand)
-	fmt.Println("")
+	fmt.Printf("\n# copy and paste the output into your terminal or run\n")
+	fmt.Printf("#  eval $(%s)\n", aliasCommand)
 }

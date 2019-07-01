@@ -39,6 +39,7 @@ type Strategy struct {
 	Image   string
 }
 
+// Validate checks whether the configuration specifies all mandatory properties
 func (c *Cfg) Validate() error {
 	if len(c.Strategies) == 0 {
 		return ErrNoStrategiesSpecified
@@ -49,6 +50,15 @@ func (c *Cfg) Validate() error {
 	}
 
 	return nil
+}
+
+// ListCommands allows for retrieval of all defined commands in a config
+func (c *Cfg) ListCommands() []string {
+	commands := make([]string, 0, len(c.Commands))
+	for cmd := range c.Commands {
+		commands = append(commands, cmd)
+	}
+	return commands
 }
 
 // Validate checks whether a strategy specifies only valid handlers
@@ -84,12 +94,4 @@ func parseFile(file []byte) (*Cfg, error) {
 	}
 
 	return &cfg, nil
-}
-
-func (cfg Cfg) ListCommands() []string {
-	commands := make([]string, 0, len(cfg.Commands))
-	for cmd, _ := range cfg.Commands {
-		commands = append(commands, cmd)
-	}
-	return commands
 }
