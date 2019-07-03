@@ -25,9 +25,10 @@ func main() {
 	 So you don't have to worry which service to use or whether you should use 'docker-compose exec' or 'docker-compose run' when executing a command.`
 	app.Commands = []cli.Command{
 		{
-			Name:    "run",
-			Aliases: []string{"r"},
-			Usage:   "run a command",
+			Name:           "run",
+			Aliases:        []string{"r"},
+			Usage:          "run a command",
+			SkipArgReorder: true,
 			Flags: []cli.Flag{
 				cli.BoolFlag{Name: "strict,s", Usage: "enable strict mode"},
 			},
