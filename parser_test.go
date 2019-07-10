@@ -29,7 +29,7 @@ func TestGenerateHandlerError(t *testing.T) {
 		"handler": "docker_compose_run",
 	})
 	assert.Error(t, err)
-	assert.Equal(t, err.Error(), "Error in strategy test: field service required but not set")
+	assert.Equal(t, err.Error(), "error in strategy test: field service required but not set")
 
 	err = cfg.generateHandler("foo", map[string]interface{}{
 		"handler": "docker_compose_run",
@@ -37,7 +37,7 @@ func TestGenerateHandlerError(t *testing.T) {
 		"other":   "field",
 	})
 	assert.Error(t, err)
-	assert.Equal(t, err.Error(), "Error in strategy foo: additonal field(s) detected: other")
+	assert.Equal(t, err.Error(), "error in strategy foo: additonal field(s) detected: other")
 }
 
 func TestGetHandlerFor(t *testing.T) {
