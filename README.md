@@ -93,6 +93,7 @@ alias irb='donner run --fallback --strict irb'
 
 ## TODO
 * Setup CI builds
+* Ensure useful error messages and test failure cases
 * Add missing flags to the handlers (volumes, ...)
 * Add documentation
 * Setup bash/zsh completion
