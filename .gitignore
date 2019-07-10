@@ -5,7 +5,8 @@ Thumbs.db
 .idea
 
 # config files
-.donner.*
+.donner.yml
+.donner.yaml
 
 # bin
 donner
